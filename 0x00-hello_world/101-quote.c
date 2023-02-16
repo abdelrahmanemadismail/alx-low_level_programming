@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-fwrite(str, sizeof(char), sizeof(str), stderr);
+char str[59] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+fwrite(str, sizeof(char), 59, stderr);
 return (1);
 }
