@@ -1,2 +1,5 @@
 *.out
-*.swap
+# Ignore vim files:
+*~
+*.swp
+*.swo
