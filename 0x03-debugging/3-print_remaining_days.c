@@ -12,8 +12,8 @@
 
 void print_remaining_days(int month, int day, int year)
 {
-	bool year_dev_4 = (year % 4 == 0 && !(year % 100 == 0));
-	bool year_dev_400 = (year % 400 == 0 && (year % 100 == 0));
+	int year_dev_4 = (year % 4 == 0 && !(year % 100 == 0));
+	int year_dev_400 = (year % 400 == 0 && (year % 100 == 0));
 
 	if (year_dev_4 || year_dev_400)
 	{
