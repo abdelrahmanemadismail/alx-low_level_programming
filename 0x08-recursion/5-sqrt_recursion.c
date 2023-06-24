@@ -11,17 +11,15 @@ int _sqrt_search(int n, int min, int max)
 	int x;
 	int x2;
 
-	if (n == 0)
-		return (0);
-	if (n < 0 || max < min)
+	if (max < min)
 		return (-1);
 	x = (min + max) / 2;
-	x2 = x * x;
-	if (x2 == n)
+	x2 = n / x;
+	if (x == x2)
 		return (x);
-	else if (x2 > n)
+	else if (x > x2)
 		return (_sqrt_search(n, min, x - 1));
-	else if (x2 < n)
+	else if (x < x2)
 		return (_sqrt_search(n, x + 1, max));
 	return (-1);
 }
@@ -33,5 +31,9 @@ int _sqrt_search(int n, int min, int max)
  */
 int _sqrt_recursion(int n)
 {
+	if (n == 0 || n == 1)
+		return (n);
+	if (n < 0)
+		return (-1);
 	return (_sqrt_search(n, 1, n));
 }
