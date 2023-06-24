@@ -1,0 +1,5 @@
+#!/bin/bash
+for file in "$@"
+do
+cp $(find /alx-low_level_programming/ -name "$file") /alx-low_level_programming/0x09-static_libraries
+done
