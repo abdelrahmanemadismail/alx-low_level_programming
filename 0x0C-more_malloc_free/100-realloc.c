@@ -29,6 +29,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		smaller = new_size;
 	}
 	p = malloc(new_size);
+	if (p == NULL)
+		return (NULL);
 	n = p;
 	for (i = 0; i < smaller; i++)
 	{
