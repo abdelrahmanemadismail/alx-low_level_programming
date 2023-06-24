@@ -22,12 +22,7 @@ int is_prime(int n, int i)
  */
 int is_prime_number(int n)
 {
-	int num;
-
-	num = n;
-	if (n < 0)
-		num = n * -1;
-	if (num == 0 || num == 1)
+	if (n < 2)
 		return (0);
-	return (is_prime(num, num / 2));
+	return (is_prime(n, n / 2));
 }
