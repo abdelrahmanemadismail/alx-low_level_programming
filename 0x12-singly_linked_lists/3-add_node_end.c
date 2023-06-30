@@ -18,16 +18,17 @@ return (c);
 }
 
 /**
- * add_node - function that adds a new node at the beginning of
+ * add_node_end - function that adds a new node at the beginning of
  *a list_t list.
  * @head: the head of the linked list
  * @str: the string to be added to the list
  * Return: the address of the new element, or NULL if it failed.
  */
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new;
 	char *s;
+	list_t *p = *head;
 
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
@@ -40,9 +41,17 @@ list_t *add_node(list_t **head, const char *str)
 		free(new);
 		return (NULL);
 	}
+
 	new->str = s;
 	new->len = _strlen(s);
-	new->next = *head;
-	*head = new;
+	new->next = NULL;
+	if (*head == NULL)
+	{
+		*head = new;
+		return (new);
+	}
+	while (p->next)
+		p = p->next;
+	p->next = new;
 	return (new);
 }
