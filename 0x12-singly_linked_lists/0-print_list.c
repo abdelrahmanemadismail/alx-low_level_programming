@@ -13,7 +13,7 @@ size_t print_list(const list_t *h)
 	while (p)
 	{
 		if (p->str == NULL)
-			printf("[%i] %s\n", 0, p->str);
+			printf("[%i] %s\n", 0, "(nil)");
 		else
 			printf("[%i] %s\n", p->len, p->str);
 		i++;
